@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Car Replacement"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/favicon/android-chrome-96x96.png">
+    <link rel="manifest" href="public/favicon/site.webmanifest">
+    <link rel="mask-icon" href="public/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="public/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="public/favicon/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--
+      Notice the use of public in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "public/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Car Replacement</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .not-supported-wrapper {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 1170px;
+            width: 100%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .img-responsive {
+            width: 300px;
+            max-width: 100%;
+            height: auto;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 40px;
+            color: #2b2b2b;
+            font-family: sans-serif;
+        }
+
+        .description {
+            color: #2b2b2b;
+            font-family: sans-serif;
+        }
+
+        .supported-browsers {
+            position: relative;
+            padding: 50px 0 0;
+        }
+
+        .supported-browsers-link {
+            display: inline-block;
+            margin: 0;
+            width: 120px;
+            height: 150px;
+        }
+
+        .supported-browsers-link span {
+            display: inline-block;
+            width: 120px;
+            margin-top: 40px;
+        }
+
+        .icon.svg-firefox {
+            width: 27px;
+        }
+
+        .icon {
+            display: inline-block;
+            -webkit-transform: scale(3);
+            -ms-transform: scale(3);
+            transform: scale(3);
+            width: 28px;
+            height: 28px;
+            -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+        }
+
+        .svg-firefox {
+            background: url('./public/icon-sprite.svg') 66.66666666666667% 0 no-repeat;
+        }
+
+        .svg-chrome {
+            background: url('./public/icon-sprite.svg') 0 99.75% no-repeat;
+        }
+
+        .svg-safari {
+            background: url('./public/icon-sprite.svg') 33.333333333333336% 49.86642920747997% no-repeat;
+        }
+
+        .svg-ie {
+            background: url('./public/icon-sprite.svg') 66.66666666666667% 49.57507082152974% no-repeat;
+        }
+
+        .svg-edge {
+            background: url('./public/icon-sprite.svg') -0.333333% 50% no-repeat;
+        }
+
+        .svg-opera {
+            background: url('./public/icon-sprite.svg') 33.333333333333336% 100% no-repeat;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+  function get_browser () {
+    var ua = navigator.userAgent, tem,
+      M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
+    if (/trident/i.test(M[1])) {
+      tem = /\brv[ :]+(\d+)/g.exec(ua) || []
+      return {name: 'IE', version: (tem[1] || '')}
+    }
+    if (M[1] === 'Chrome') {
+      tem = ua.match(/\bOPR\/(\d+)/)
+      if (tem != null) {
+        return {name: 'Opera', version: tem[1]}
+      }
+    }
+    if (window.navigator.userAgent.indexOf('Edge') > -1) {
+      tem = ua.match(/\bEdge\/(\d+)/)
+      if (tem != null) {
+        return {name: 'Edge', version: tem[1]}
+      }
+    }
+    if (window.navigator.userAgent.indexOf('Safari') > -1) {
+      tem = ua.match(/\bSafari\/(\d+)/)
+      if (tem != null) {
+        return {name: 'Safari', version: tem[1]}
+      }
+    }
+    if (window.navigator.userAgent.indexOf('Firefox') > -1) {
+      tem = ua.match(/\bFirefox\/(\d+)/)
+      if (tem != null) {
+        return {name: 'Firefox', version: tem[1]}
+      }
+    }
+    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?']
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) {
+      M.splice(1, 1, tem[1])
+    }
+    return {
+      name: M[0],
+      version: +M[1]
+    }
+  }
+  function isSupported (browser) {
+    var supported = true
+    if ((browser.name === 'MSIE' || browser.name === 'IE') && browser.version <= 10) {
+      supported = false
+    }
+    return supported
+  }
+
+  var browser = get_browser()
+  var isSupported = isSupported(browser)
+
+  if (isSupported) {
+    window.location.href = '/'
+  }
+
+</script>
+<div class="not-supported-wrapper">
+    <div class="inner">
+        <img src="public/logo.png" alt="logo" class="img-responsive"/>
+        <h1 class="title">Your browser is no longer supported</h1>
+        <p class="description">Please update your browser or switch to a supported browser</p>
+        <div class="supported-browsers">
+            <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" class="supported-browsers-link">
+                <div class="icon svg-firefox with-version-name"></div>
+                <span>Firefox</span>
+            </a>
+            <a href="https://www.google.com/chrome/" target="_blank" class="supported-browsers-link">
+                <div class="icon svg-chrome"></div>
+                <span>Google chrome</span>
+            </a>
+            <a href="https://support.apple.com/downloads/safari" target="_blank" class="supported-browsers-link">
+                <div class="icon svg-safari"></div>
+                <span>Safari</span>
+            </a>
+            <a href="https://www.microsoft.com/en-us/download/details.aspx?id=41628" target="_blank"
+               class="supported-browsers-link">
+                <div class="icon svg-ie"></div>
+                <span>IE 11</span>
+            </a>
+            <a href="https://www.microsoft.com/en-us/edge" target="_blank"
+               class="supported-browsers-link">
+                <div class="icon svg-edge"></div>
+                <span>Edge</span>
+            </a>
+            <a href="http://www.opera.com/download" target="_blank"
+               class="supported-browsers-link">
+                <div class="icon svg-opera"></div>
+                <span>Opera</span>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

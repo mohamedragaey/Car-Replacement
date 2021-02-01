@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirMedium/Avenir-Medium.eot');
+    src: url('../fonts/AvenirMedium/Avenir-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AvenirMedium/Avenir-Medium.woff2') format('woff2'),
+    url('../fonts/AvenirMedium/Avenir-Medium.woff') format('woff'),
+    url('../fonts/AvenirMedium/Avenir-Medium.ttf') format('truetype'),
+    url('../fonts/AvenirMedium/Avenir-Medium.svg#Avenir-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirHeavy/Avenir-Heavy.eot');
+    src: url('../fonts/AvenirHeavy/Avenir-Heavy.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AvenirHeavy/Avenir-Heavy.woff2') format('woff2'),
+    url('../fonts/AvenirHeavy/Avenir-Heavy.woff') format('woff'),
+    url('../fonts/AvenirHeavy/Avenir-Heavy.ttf') format('truetype'),
+    url('../fonts/AvenirHeavy/Avenir-Heavy.svg#Avenir-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

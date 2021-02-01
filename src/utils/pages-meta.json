@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Home page",
+    "image": "/public/logo.png",
+    "description": "United OFOQ",
+    "schema": "/"
+  },
+  "positions": {
+    "title": "Positions",
+    "image": "/public/logo.png",
+    "description": "United OFOQ",
+    "schema": "/positions"
+  },
+  "vacancies": {
+    "title": "Vacancies",
+    "image": "/public/logo.png",
+    "description": "United OFOQ",
+    "schema": "/vacancies"
+  },
+  "posts": {
+    "title": "Posts",
+    "image": "/public/logo.png",
+    "description": "United OFOQ",
+    "schema": "/posts"
+  },
+  "exams": {
+    "title": "Exams",
+    "image": "/public/logo.png",
+    "description": "United OFOQ",
+    "schema": "/exams"
+  },
+  "company": {
+    "title": "Company",
+    "image": "/public/logo.png",
+    "description": "United OFOQ",
+    "schema": "/company"
+  }
+}
