@@ -3,7 +3,7 @@ import {Helmet} from 'react-helmet'
 import {IntlProvider} from 'react-intl'
 import arMessages from './translations/ar.json'
 import enMessages from './translations/en.json'
-import {ArabicFont, EnglishFont} from './utils/Fonts'
+import GoogleFonts, {ArabicFont, EnglishFont} from './utils/Fonts'
 import Configuration from './Services/Api/Configuration'
 import {LocalStorageService} from './Services/LocalStorageService'
 
@@ -21,6 +21,7 @@ const LanguageProvider = ({children}) => {
   // empty array as second argument equivalent to componentDidMount
   let isSubscribed = false
   React.useEffect(() => {
+    GoogleFonts()
     // eslint-disable-next-line
     isSubscribed = true
     getAppLanguage()
