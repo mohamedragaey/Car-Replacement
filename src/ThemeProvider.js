@@ -44,7 +44,7 @@ const ThemeProvider = ({children}) => {
       },
       secondary: {
         light: '#79ffc9',
-        main: '#3dd598',
+        main: '#6D6D6D',
         dark: '#00a36a',
         contrastText: '#000'
       },
@@ -77,8 +77,8 @@ const ThemeProvider = ({children}) => {
       'htmlFontSize': 16,
       'fontSize': 14,
       'fontWeightLight': 300,
-      'fontWeightRegular': 500,
-      'fontWeightBold': 900
+      'fontWeightRegular': 400,
+      'fontWeightBold': 700
     }
   })
 

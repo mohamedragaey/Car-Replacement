@@ -17,10 +17,12 @@
   "validationSchema.validEmail": "Invalid email address",
   "validationSchema.required": "Required",
   "validationSchema.reCaptcha": "reCaptcha validation failed, please refresh the page and try again.",
-  "MainNavigation.link.item1": "Home",
-  "MainNavigation.link.item2": "Position",
-  "MainNavigation.link.item3": "Vacancies",
-  "MainNavigation.link.item4": "Posts",
-  "MainNavigation.link.item5": "Exams",
-  "MainNavigation.link.item6": "Company"
+  "MainNavigation.link.item1": "عن المبادرة",
+  "MainNavigation.link.item2": "شروط الانضمام",
+  "MainNavigation.link.item3": "قواعد وقوانين",
+  "MainNavigation.link.item4": "شركاء التنفيذ",
+  "MainNavigation.link.item5": "أخبار",
+  "MainNavigation.link.item6": "اتصل بنا",
+  "footer.copyRights.title": "مبادرة إحلال المركبات المتقادمة للعمل بالغاز الطبيعي",
+  "footer.copyRights.title.small": "جميع الحقوق محفوظة 2021"
 }

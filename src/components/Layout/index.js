@@ -1,14 +1,15 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import {FormattedMessage} from 'react-intl'
 import {withStyles} from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import CookieConsent from 'react-cookie-consent'
-import Header from '../Header'
 import ScrollToTop from '../../utils/ScrollToTop'
 import ScrollTop from '../ScrollTop/ScrollTop'
 import {Routes} from '../../routes'
 import {useStyles} from './Styles'
-import {FormattedMessage} from 'react-intl'
+import Header from '../Header'
+import Footer from '../Footer'
 
 class Layout extends React.PureComponent {
   handleRouteBasedClassName = () => {
@@ -26,6 +27,7 @@ class Layout extends React.PureComponent {
         <main className={classes.content}>
           <Routes/>
         </main>
+        <Footer/>
         <ScrollTop scrollStepInPx="50" delayInMs="0"/>
         <CookieConsent
           location="bottom"
