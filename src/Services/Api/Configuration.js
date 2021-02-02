@@ -3,7 +3,7 @@
  * Responsible for All The Api Configuration for the Application
  */
 import CookiesStorageService from '../CookiesStorageService'
-import {ArabicFont, EnglishFont} from '../../utils/Fonts'
+import {ArabicFont} from '../../utils/Fonts'
 import arMessages from './../../translations/ar.json'
 import {LocalStorageService} from '../LocalStorageService'
 
