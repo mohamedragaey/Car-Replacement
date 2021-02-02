@@ -73,7 +73,7 @@ const LanguageProvider = ({children}) => {
     value.target.value === 'ar' ? switchToArabic() : switchToEnglish()
   }
 
-  let title = 'United OFOQ'
+  let title = 'Car-replacement'
   return (
     !!loading ? '' :
       <LanguageContext.Provider value={{

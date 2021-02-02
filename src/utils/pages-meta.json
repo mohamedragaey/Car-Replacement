@@ -2,14 +2,14 @@
   "home": {
     "title": "Home page",
     "image": "/public/logo.png",
-    "description": "United OFOQ",
+    "description": "Car Replacement",
     "schema": "/"
   },
-  "positions": {
-    "title": "Positions",
+  "requestRegistration": {
+    "title": "Replacement Registration",
     "image": "/public/logo.png",
-    "description": "United OFOQ",
-    "schema": "/positions"
+    "description": "Replacement Registration",
+    "schema": "/replacement-registration"
   },
   "vacancies": {
     "title": "Vacancies",

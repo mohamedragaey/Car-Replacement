@@ -3,7 +3,7 @@
  * Responsible for All The Api Configuration for the Application
  */
 import CookiesStorageService from '../CookiesStorageService'
-import {EnglishFont} from '../../utils/Fonts'
+import { ArabicFont } from '../../utils/Fonts'
 import arMessages from './../../translations/ar.json'
 import {LocalStorageService} from '../LocalStorageService'
 
@@ -20,9 +20,9 @@ class Configuration {
   static GOOGLE_CLIENT_ID = 'GOOGLE_CLIENT_ID'
 
   static Local = LocalStorageService.get('CRLanguage')
-  static DefaultLocale = 'en'
-  static DefaultDirection = 'ltr'
-  static DefaultFont = EnglishFont
+  static DefaultLocale = 'ar'
+  static DefaultDirection = 'rtl'
+  static DefaultFont = ArabicFont
   static DefaultMessage = arMessages
 
   /**
