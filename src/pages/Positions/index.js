@@ -7,7 +7,7 @@ const Positions = () => {
     <>
       <SEO title={positions.title}
            pathname={window.location.origin}
-           titleTemplate='United OFOQ'
+           titleTemplate='Car Replacement'
            image={positions.image}
            description={positions.description}
       />
