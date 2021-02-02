@@ -7,11 +7,11 @@ const Home = () => {
     <>
       <SEO title={home.title}
            pathname={window.location.origin}
-           titleTemplate='United OFOQ'
+           titleTemplate='Car Replacement'
            image={home.image}
            description={home.description}
       />
-      <h1 style={{textAlign: 'center'}}>Welcome To United OFOQ</h1>
+      <h1 style={{textAlign: 'center'}}>Welcome To Car Replacement</h1>
     </>
   )
 }

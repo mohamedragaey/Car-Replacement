@@ -30,6 +30,7 @@
     "react-router-named-routes": "^0.0.23",
     "react-scripts": "4.0.1",
     "react-spinners-kit": "^1.9.1",
+    "webfontloader": "^1.6.28",
     "yup": "^0.32.8"
   },
   "scripts": {

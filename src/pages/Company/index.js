@@ -7,7 +7,7 @@ const Company = () => {
     <>
       <SEO title={company.title}
            pathname={window.location.origin}
-           titleTemplate='United OFOQ'
+           titleTemplate='Car Replacement'
            image={company.image}
            description={company.description}
       />

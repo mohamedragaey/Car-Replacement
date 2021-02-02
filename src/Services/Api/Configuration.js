@@ -5,7 +5,7 @@
 import CookiesStorageService from '../CookiesStorageService'
 import { ArabicFont } from '../../utils/Fonts'
 import arMessages from './../../translations/ar.json'
-import {LocalStorageService} from '../LocalStorageService'
+import { LocalStorageService } from '../LocalStorageService'
 
 const StorageService = CookiesStorageService.getService()
 

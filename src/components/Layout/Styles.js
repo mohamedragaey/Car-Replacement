@@ -2,15 +2,15 @@
  * General Styles For The Layout
  * @type {function(*): {}}
  */
-import {ArabicFont, EnglishFont} from '../../utils/Fonts'
-import {fade} from '@material-ui/core'
+import { ArabicFont, EnglishFont } from '../../utils/Fonts'
+import { fade } from '@material-ui/core'
 
 export const useStyles = ((theme) => ({
   '@global': {
-    html: {height: '100%'},
+    html: { height: '100%' },
     body: {
       height: '100%',
-      backgroundColor: theme.palette.common.white
+      backgroundColor: theme.palette.colors.body
     },
     '#root': {
       height: '100%',
@@ -46,6 +46,10 @@ export const useStyles = ((theme) => ({
     '.MuiBackdrop-root': {
       backgroundColor: fade(theme.palette.common.black, 0.75),
       backdropFilter: 'blur(2px)'
+    },
+    '::selection': {
+      color: theme.palette.common.white,
+      background: theme.palette.primary.main
     }
   },
   pageWrapper: {
@@ -55,6 +59,6 @@ export const useStyles = ((theme) => ({
   },
   content: {
     flex: '1 1 auto',
-    paddingTop: theme.spacing(8.875)
+    paddingTop: theme.spacing(15.625)
   }
 }))

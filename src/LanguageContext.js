@@ -1,17 +1,17 @@
-import React, {createContext} from 'react'
-import {Helmet} from 'react-helmet'
-import {IntlProvider} from 'react-intl'
+import React, { createContext } from 'react'
+import { Helmet } from 'react-helmet'
+import { IntlProvider } from 'react-intl'
 import arMessages from './translations/ar.json'
 import enMessages from './translations/en.json'
-import {ArabicFont, EnglishFont} from './utils/Fonts'
+import GoogleFonts, { ArabicFont, EnglishFont } from './utils/Fonts'
 import Configuration from './Services/Api/Configuration'
-import {LocalStorageService} from './Services/LocalStorageService'
+import { LocalStorageService } from './Services/LocalStorageService'
 
-let {DefaultLocale, DefaultDirection, DefaultFont, DefaultMessage} = Configuration
+let { DefaultLocale, DefaultDirection, DefaultFont, DefaultMessage } = Configuration
 
 const LanguageContext = createContext({})
 
-const LanguageProvider = ({children}) => {
+const LanguageProvider = ({ children }) => {
   const [dir, setDir] = React.useState(DefaultDirection)
   const [locale, setLocale] = React.useState(DefaultLocale)
   const [font, setFont] = React.useState(DefaultFont)
@@ -21,6 +21,7 @@ const LanguageProvider = ({children}) => {
   // empty array as second argument equivalent to componentDidMount
   let isSubscribed = false
   React.useEffect(() => {
+    GoogleFonts()
     // eslint-disable-next-line
     isSubscribed = true
     getAppLanguage()
@@ -73,7 +74,7 @@ const LanguageProvider = ({children}) => {
     value.target.value === 'ar' ? switchToArabic() : switchToEnglish()
   }
 
-  let title = 'Car-replacement'
+  let title = 'Car Replacement'
   return (
     !!loading ? '' :
       <LanguageContext.Provider value={{
@@ -103,4 +104,4 @@ const LanguageProvider = ({children}) => {
 
 const LanguageConsumer = LanguageContext.Consumer
 
-export {LanguageProvider, LanguageConsumer}
+export { LanguageProvider, LanguageConsumer }
