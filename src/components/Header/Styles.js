@@ -1,6 +1,18 @@
 import {makeStyles} from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
+  header: {
+    '&.MuiAppBar-root': {
+      backgroundColor: '#f1f1f1',
+      padding: theme.spacing(1, 0),
+      '&.inverse-Header': {
+        backgroundColor: theme.palette.common.white,
+        '& $headerDesktop': {
+          alignItems: 'center'
+        }
+      }
+    }
+  },
   headerToolbar: {
     minHeight: theme.spacing(8.75),
     [theme.breakpoints.down('sm')]: {
@@ -9,8 +21,14 @@ export const useStyles = makeStyles((theme) => ({
   },
   headerDesktop: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
-    flexGrow: 1
+    flexGrow: 1,
+    marginTop: theme.spacing(-1)
+  },
+  headerGridContainer: {
+    [theme.breakpoints.down('sm')]: {
+      flexWrap: 'nowrap'
+    }
   }
 }))

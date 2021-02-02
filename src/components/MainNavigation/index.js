@@ -1,5 +1,4 @@
 import React from 'react'
-import {Fade} from 'react-reveal'
 import {NavLink} from 'react-router-dom'
 import {FormattedMessage} from 'react-intl'
 import {GeneralConsumer} from '../../GeneralContext'
@@ -43,18 +42,20 @@ const MainNavigation = () => {
   return (
     <GeneralConsumer>{({toggleMobileMenuDrawer}) => (
       <nav className={classes.mainNavigation}>
-        {menu.map((item, index) => (
-          <Fade bottom delay={index * 200} key={item.key}>
-            <NavLink
-              exact
-              activeClassName="active"
-              to={item.link}
-              onClick={() => toggleMobileMenuDrawer(false)}
-            >
-              {item.label}
-            </NavLink>
-          </Fade>
-        ))}
+        <ul>
+          {menu.map((item, index) => (
+            <li key={item.key}>
+              <NavLink
+                exact
+                activeClassName="active"
+                to={item.link}
+                onClick={() => toggleMobileMenuDrawer(false)}
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </nav>
     )}
     </GeneralConsumer>

@@ -1,19 +1,17 @@
 import React from 'react'
-import {Container, Grid} from '@material-ui/core'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import {useStyles} from './Styles'
-import Logo from '../Logo'
+import {Container, Grid, Toolbar, AppBar} from '@material-ui/core'
 import {lg} from '../../utils/ResponsiveUtility'
 import MainNavigation from '../MainNavigation'
 import MobileMenu from '../MobileMenu'
-import LanguageSwitcher from '../LanguageSwitcher'
+import {useStyles} from './Styles'
+import Logo from '../Logo'
 
-const Header = () => {
+const Header = ({location}) => {
   const classes = useStyles()
-  let [width, setWidth] = React.useState(document.body.clientWidth)
-  let Mobile = (width < lg)
-  let DesktopAndUp = (width >= lg)
+  const [width, setWidth] = React.useState(document.body.clientWidth)
+  const Mobile = (width < lg)
+  const DesktopAndUp = (width >= lg)
+
   React.useEffect(() => {
     const getWidth = () => {
       setWidth(document.body.clientWidth)
@@ -25,21 +23,21 @@ const Header = () => {
   }, [width])
 
   return (
-    <AppBar position="fixed" className={classes.header} id='header'>
+    <AppBar position="fixed" className={`${classes.header} ${location}`} id='header' elevation={0}>
       <Toolbar className={classes.headerToolbar}>
-        <Container maxWidth="lg">
-          <Grid container justify='space-between' alignItems='center'>
+        <Container maxWidth={false}>
+          <Grid container justify='space-between' alignItems='center' className={classes.headerGridContainer}>
             {DesktopAndUp &&
             <Grid item className={classes.headerDesktop}>
-              <LanguageSwitcher/>
+              <Logo location={location}/>
               <MainNavigation/>
             </Grid>
             }
-            <Logo/>
             {Mobile &&
-            <div>
+            <>
+              <Logo location={location}/>
               <MobileMenu/>
-            </div>
+            </>
             }
           </Grid>
         </Container>

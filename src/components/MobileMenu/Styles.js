@@ -2,7 +2,6 @@ import {makeStyles} from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   menuButton: {
-    color: theme.palette.common.white + ' !important',
     '& svg': {
       fontSize: theme.typography.pxToRem(32),
       fontWeight: 600

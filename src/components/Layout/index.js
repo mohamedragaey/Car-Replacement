@@ -23,7 +23,7 @@ class Layout extends React.PureComponent {
       <div className={`${classes.pageWrapper} ${this.handleRouteBasedClassName()}`}>
         <CssBaseline/>
         <ScrollToTop/>
-        <Header/>
+        <Header location={this.handleRouteBasedClassName()}/>
         <main className={classes.content}>
           <Routes/>
         </main>

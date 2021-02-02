@@ -16,7 +16,6 @@ const MobileMenu = () => {
         <IconButton
           edge="end"
           className={classes.menuButton}
-          color="inherit"
           aria-label="open drawer"
           onClick={() => toggleMobileMenuDrawer(true)}
         >
