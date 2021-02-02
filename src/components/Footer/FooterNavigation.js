@@ -45,8 +45,8 @@ const FooterNavigation = () => {
     <nav className={classes.footerNavigation}>
       <ul>
         {menu.map((item, index) => (
-          <li>
-            <NavLink exact activeClassName="active" to={item.link} key={item.key}>
+          <li key={item.key}>
+            <NavLink exact activeClassName="active" to={item.link}>
               {item.label}
             </NavLink>
           </li>
@@ -54,8 +54,8 @@ const FooterNavigation = () => {
       </ul>
       <ul>
         {secondMenu.map((item, index) => (
-          <li>
-            <NavLink exact activeClassName="active" to={item.link} key={item.key}>
+          <li key={item.key}>
+            <NavLink exact activeClassName="active" to={item.link}>
               {item.label}
             </NavLink>
           </li>
