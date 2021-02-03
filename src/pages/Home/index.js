@@ -1,4 +1,5 @@
 import React from 'react'
+import HomePageContent from '../../components/HomePageContent'
 import {SEO} from '../../components/Seo/seo'
 import {home} from '../../utils/pages-meta'
 
@@ -11,7 +12,7 @@ const Home = () => {
            image={home.image}
            description={home.description}
       />
-      <h1 style={{textAlign: 'center'}}>Welcome To Car Replacement</h1>
+      <HomePageContent/>
     </>
   )
 }

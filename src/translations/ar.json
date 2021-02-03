@@ -26,5 +26,12 @@
   "footer.copyRights.title": "مبادرة إحلال المركبات المتقادمة للعمل بالغاز الطبيعي",
   "footer.copyRights.title.small": "جميع الحقوق محفوظة 2021",
   "logo.innerLogo": "مبادرة إحلال المركبات المتقادمة للعمل بالغاز الطبيعي",
-  "CarReplacement.request.registration.title": "تسجيل طلب"
+  "CarReplacement.request.registration.title": "تسجيل طلب",
+  "ConditionsForTheInitiative.SectionTitle.title": "شروط الإنضمام للمبادرة",
+  "ConditionsForTheInitiative.ItemCircle.title.ownCar": "ان المشارك يمتلك سيارة",
+  "ConditionsForTheInitiative.ItemCircle.title.years": "يكون مر عليها عشرون سنة",
+  "ConditionsForTheInitiative.ItemCircle.title.validId": "رخصتها سارية والسيارة تعمل",
+  "InitiativeCars.Header.title": "سيارات المبادره",
+  "InitiativeCars.taxi.title": "سيارات الأجرة",
+  "InitiativeCars.car.title": "سيارات الملاكي"
 }
