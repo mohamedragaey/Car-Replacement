@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   headerToolbar: {
     minHeight: theme.spacing(8.75),
+    padding: theme.spacing(0),
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(0)
     }
