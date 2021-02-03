@@ -37,9 +37,6 @@ export const useStyles = ((theme) => ({
       fontFamily: theme.direction === 'ltr' ? EnglishFont : ArabicFont,
       fontWeight: 'bold'
     },
-    '.grecaptcha-badge': {
-      visibility: 'hidden'
-    },
     '.MuiDrawer-paper': {
       backgroundColor: theme.palette.common.black
     },
@@ -59,6 +56,6 @@ export const useStyles = ((theme) => ({
   },
   content: {
     flex: '1 1 auto',
-    paddingTop: theme.spacing(15.625)
+    paddingTop: theme.spacing(14.625)
   }
 }))

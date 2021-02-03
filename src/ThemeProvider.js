@@ -84,6 +84,7 @@ const ThemeProvider = ({ children }) => {
         hint: '#98a9bc'
       },
       colors: {
+        offWhite: '#F1F1F1',
         body: '#F5F5F5',
         footer: '#6d6d6d',
         border: '#74727f'
