@@ -1,9 +1,7 @@
 import {makeStyles} from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
-  conditionsForTheInitiative: {
-    marginBottom: theme.spacing(6)
-  },
+  conditionsForTheInitiative: {},
   conditionsForTheInitiativeItemContent: {
     display: 'flex',
     flexWrap: 'wrap',
