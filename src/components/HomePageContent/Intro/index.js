@@ -2,7 +2,7 @@ import React from 'react'
 import {FormattedMessage} from 'react-intl'
 import {Container, Grid} from '@material-ui/core'
 import {useStyles} from './Styles'
-// import IntroForm from './Form'
+import IntroForm from './Form'
 
 import intro from './../../../images/intro.png'
 
@@ -24,7 +24,7 @@ const Intro = () => {
                     <FormattedMessage id='intro.Banner.Caption.Description'/>
                   </p>
                 </div>
-                {/*<IntroForm/>*/}
+                <IntroForm/>
               </div>
             </div>
           </Grid>

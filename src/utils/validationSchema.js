@@ -9,3 +9,8 @@ export const LoginFormValidation = yup.object().shape({
   password: yup.string().required(<FormattedMessage id='validationSchema.required'/>),
   reCaptcha: yup.string().trim().required(<FormattedMessage id='validationSchema.reCaptcha'/>)
 })
+
+export const IntroFormValidation = yup.object().shape({
+  requestNumber: yup.string().required(<FormattedMessage id='validationSchema.required'/>),
+  nationalId: yup.string().required(<FormattedMessage id='validationSchema.required'/>)
+})
