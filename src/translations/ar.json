@@ -26,5 +26,10 @@
   "footer.copyRights.title": "مبادرة إحلال المركبات المتقادمة للعمل بالغاز الطبيعي",
   "footer.copyRights.title.small": "جميع الحقوق محفوظة 2021",
   "logo.innerLogo": "مبادرة إحلال المركبات المتقادمة للعمل بالغاز الطبيعي",
-  "CarReplacement.request.registration.title": "تسجيل طلب"
+  "CarReplacement.request.registration.title": "تسجيل طلب",
+  "CarReplacement.request.registration.step1.title": "بيانات العميل و المركبة",
+  "CarReplacement.request.registration.step2.title": "بيانات المركبة المسجلة لدى إدارة المرور",
+  "CarReplacement.request.registration.step3.title": "إختيار المركبة الجديدة",
+  "CarReplacement.request.registration.step4.title": "إختيار طريقة السداد",
+  "CarReplacement.request.registration.step5.title": "الإرشادات و تحميل المستندات"
 }
