@@ -23,11 +23,11 @@
     "description": "Car Replacement",
     "schema": "/vacancies"
   },
-  "posts": {
-    "title": "Posts",
+  "implementationPartners": {
+    "title": "Implementation Partners",
     "image": "/public/logo.png",
     "description": "Car Replacement",
-    "schema": "/posts"
+    "schema": "/implementation-partners"
   },
   "exams": {
     "title": "Exams",

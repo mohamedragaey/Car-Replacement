@@ -16,6 +16,26 @@ let menu = [
     label: <FormattedMessage id='MainNavigation.link.item2'/>,
     link: NamedRoutes.requestRegistration
   },
+  {
+    key: 3,
+    label: <FormattedMessage id='MainNavigation.link.item3'/>,
+    link: NamedRoutes.vacancies
+  },
+  {
+    key: 4,
+    label: <FormattedMessage id='MainNavigation.link.item4'/>,
+    link: NamedRoutes.implementationPartners
+  },
+  {
+    key: 5,
+    label: <FormattedMessage id='MainNavigation.link.item5'/>,
+    link: NamedRoutes.exams
+  },
+  {
+    key: 6,
+    label: <FormattedMessage id='MainNavigation.link.item6'/>,
+    link: NamedRoutes.company
+  }
 ]
 const MainNavigation = () => {
   const classes = useStyles()
