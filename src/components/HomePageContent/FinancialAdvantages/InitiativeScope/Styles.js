@@ -27,7 +27,8 @@ export const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(-2),
     [theme.breakpoints.down('md')]: {
       maxWidth: 300,
-      margin: 'auto'
+      margin: 'auto',
+      width: '100%'
     },
     '& a': {
       display: 'flex',
