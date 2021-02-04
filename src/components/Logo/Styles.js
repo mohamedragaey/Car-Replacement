@@ -5,9 +5,12 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 109,
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+    transition: 'all 0.5s ease-in-out',
+    '.shrink &': {},
     [theme.breakpoints.up('lg')]: {
-      paddingRight: theme.spacing(8),
+      // paddingRight: theme.spacing(8),
       '&.inner': {
         paddingRight: theme.spacing(0)
       }
@@ -22,10 +25,18 @@ export const useStyles = makeStyles((theme) => ({
   },
   ministryLogoImage: {
     width: 80,
-    objectFit: 'contain'
+    objectFit: 'contain',
+    transition: 'all 0.5s ease-in-out',
+    '.shrink &': {
+      width: 50
+    }
   },
   tamweelLogo: {
-    width: 100
+    width: 100,
+    transition: 'all 0.5s ease-in-out',
+    '.shrink &': {
+      width: 90
+    }
   },
   innerLogo: {
     maxWidth: 220,

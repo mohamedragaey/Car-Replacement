@@ -2,12 +2,12 @@
  * General Styles For The Layout
  * @type {function(*): {}}
  */
-import { ArabicFont, EnglishFont } from '../../utils/Fonts'
-import { fade } from '@material-ui/core'
+import {ArabicFont, EnglishFont} from '../../utils/Fonts'
+import {fade} from '@material-ui/core'
 
 export const useStyles = ((theme) => ({
   '@global': {
-    html: { height: '100%' },
+    html: {height: '100%'},
     body: {
       height: '100%',
       backgroundColor: theme.palette.colors.body
@@ -56,6 +56,6 @@ export const useStyles = ((theme) => ({
   },
   content: {
     flex: '1 1 auto',
-    paddingTop: theme.spacing(14.625)
+    paddingTop: theme.spacing(12)
   }
 }))

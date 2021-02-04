@@ -41,22 +41,24 @@ const MainNavigation = () => {
   const classes = useStyles()
   return (
     <GeneralConsumer>{({toggleMobileMenuDrawer}) => (
-      <nav className={classes.mainNavigation}>
-        <ul>
-          {menu.map((item, index) => (
-            <li key={item.key}>
-              <NavLink
-                exact
-                activeClassName="active"
-                to={item.link}
-                onClick={() => toggleMobileMenuDrawer(false)}
-              >
-                {item.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className={classes.mainNavigationWrapper}>
+        <nav className={classes.mainNavigation}>
+          <ul>
+            {menu.map((item, index) => (
+              <li key={item.key}>
+                <NavLink
+                  exact
+                  activeClassName="active"
+                  to={item.link}
+                  onClick={() => toggleMobileMenuDrawer(false)}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     )}
     </GeneralConsumer>
   )
