@@ -1,103 +1,92 @@
 import React from 'react'
-import { Button, Stepper, Step, StepButton, Typography } from '@material-ui/core'
-import { useStyles } from './Styles'
+import { Grid, Stepper, Step, StepButton, StepContent, StepLabel } from '@material-ui/core'
+import { sm } from '../../../utils/ResponsiveUtility'
+import { RequestConsumer } from '../../../RequestContext'
+import { useStyles, RequestStepsConnector, requestStepIconStyles } from './Styles'
 
 const RequestSteps = () => {
   const classes = useStyles()
-  const [activeStep, setActiveStep] = React.useState(0)
-  const [stepsTrail, setStepsTrail] = React.useState(new Set())
-  const [completed, setCompleted] = React.useState(new Set())
-  const steps = getSteps()
+  let [width, setWidth] = React.useState(document.body.clientWidth)
+  let Mobile = (width < sm)
 
-  function getSteps () {
-    return ['Select master blaster campaign settings', 'Create an ad group', 'Create an ad']
-  }
-
-  function getStepContent (stepIndex) {
-    switch (stepIndex) {
-      case 0:
-        return 'Select campaign settings...'
-      case 1:
-        return 'What is an ad group anyways?'
-      case 2:
-        return 'This is the bit I really care about!'
-      default:
-        return 'Unknown stepIndex'
+  React.useEffect(() => {
+    const getWidth = () => {
+      setWidth(document.body.clientWidth)
     }
-  }
+    window.addEventListener('resize', getWidth)
+    return () => {
+      window.removeEventListener('resize', getWidth)
+    }
+  }, [width])
 
-  const handleNext = () => {
-    const newCompleted = new Set(completed)
-    newCompleted.add(activeStep)
-    setCompleted(newCompleted)
-
-    const newStepsTrail = new Set(stepsTrail)
-    newStepsTrail.add(activeStep + 1)
-    setStepsTrail(newStepsTrail)
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1)
-  }
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1)
-  }
-
-  const handleReset = () => {
-    setActiveStep(0)
-  }
-  const handleStep = (step) => () => {
-    setActiveStep(step)
-  }
-
-  function isStepComplete (step) {
-    return completed.has(step)
-  }
-
-  function inStepsTrail (step) {
-    return stepsTrail.has(step)
+  const requestStepIcon = (props, icon) => {
+    const classes = requestStepIconStyles()
+    const { active, completed } = props
+    let iconClasses = [classes.root]
+    if (!!active) iconClasses.push(classes.active)
+    if (!!completed) iconClasses.push(classes.completed)
+    return (
+      <div className={iconClasses.join(' ')}>
+        {icon}
+      </div>
+    )
   }
 
   return (
-    <div className={classes.root}>
-      <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map((label, index) => (
-          <Step key={label}>
-            {/*<StepLabel>{label}</StepLabel>*/}
-            <StepButton
-              onClick={handleStep(index)}
-              completed={isStepComplete(index)}
-              disabled={!(isStepComplete(index) || inStepsTrail(index))}
-            >
-              {label}
-            </StepButton>
-          </Step>
-        ))}
-      </Stepper>
-      <div>
-        {activeStep === steps.length ? (
-          <div>
-            <Typography className={classes.instructions}>All steps completed</Typography>
-            <Button onClick={handleReset}>Reset</Button>
-          </div>
-        ) : (
-          <div>
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-            <div>
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.backButton}
-              >
-                Back
-              </Button>
-              <Button variant="contained" color="primary" onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+    <RequestConsumer>
+      {({
+          requestActiveStep, requestSteps, getRequestStepContent, handleNextStep, handleBackStep, handleGoToStep,
+          isRequestStepComplete, inRequestStepsTrail
+        }) => (
+        <>
+          <Stepper className={classes.StepperWrapper}
+                   activeStep={requestActiveStep} {...!!Mobile ? { orientation: 'vertical' } : {
+            connector: <RequestStepsConnector/>, alternativeLabel: true
+          }}>
+            {requestSteps.map((step, index) => (
+              <Step key={step.key}>
+                <StepButton
+                  disableRipple
+                  onClick={() => handleGoToStep(index)}
+                  completed={isRequestStepComplete(index)}
+                  disabled={!(isRequestStepComplete(index) || inRequestStepsTrail(index))}
+                >
+                  <StepLabel
+                    StepIconComponent={(props) => requestStepIcon(props, step.icon)}>{step.title}</StepLabel>
+                </StepButton>
+                {!!Mobile &&
+                <StepContent>
+                  {getRequestStepContent(index)}
+                  {/*<div className={classes.actionsContainer}>*/}
+                  {/*  <div>*/}
+                  {/*    <Button*/}
+                  {/*      disabled={requestActiveStep === 0}*/}
+                  {/*      onClick={handleBackStep}*/}
+                  {/*      className={classes.backButton}*/}
+                  {/*    >*/}
+                  {/*      Back*/}
+                  {/*    </Button>*/}
+                  {/*    <Button*/}
+                  {/*      variant="contained"*/}
+                  {/*      color="primary"*/}
+                  {/*      onClick={handleNextStep}*/}
+                  {/*      className={classes.button}*/}
+                  {/*    >*/}
+                  {/*      {requestActiveStep === requestSteps.length - 1 ? 'Finish' : 'Next'}*/}
+                  {/*    </Button>*/}
+                  {/*  </div>*/}
+                  {/*</div>*/}
+                </StepContent>
+                }
+              </Step>
+            ))}
+          </Stepper>
+          <Grid container>
+            {getRequestStepContent(requestActiveStep)}
+          </Grid>
+        </>
+      )}
+    </RequestConsumer>
   )
 }
 export default RequestSteps

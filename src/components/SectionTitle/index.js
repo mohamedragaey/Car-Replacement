@@ -9,7 +9,7 @@ const SectionTitle = ({ variant, component, title }) => {
     <div className={classes.sectionTitleWrapper}>
       <Typography className={classes.sectionTitle} variant={variant} component={component || variant}>
         {title}
-        <span className={classes.sectionTitleBorder}></span>
+        <span className={classes.sectionTitleBorder}/>
       </Typography>
     </div>
   )

@@ -11,7 +11,8 @@ import Company from './pages/Company'
 
 export const NamedRoutes = {
   home: '/',
-  requestRegistration: '/replacement-registration',
+  requestRegistration: '/replacement-request',
+  singleRequest: '/replacement-request/:id',
   positions: '/positions',
   vacancies: '/vacancies',
   posts: '/posts',

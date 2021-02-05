@@ -1,55 +1,67 @@
-import { fade, makeStyles } from '@material-ui/core/styles'
+import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { StepConnector } from '@material-ui/core'
 
 export const useStyles = makeStyles((theme) => ({
-  sectionTitleWrapper: {
-    padding: theme.spacing(0.625)
-  },
-  sectionTitle: {
-    display: 'inline-block',
-    padding: theme.spacing(0.625, 5, 0.625, 1.25),
-    color: theme.palette.common.white,
-    position: 'relative',
-    minWidth: 250,
-    fontSize: theme.typography.pxToRem(16),
-    background: `linear-gradient(-45deg, ${theme.palette.tertiary.main}, ${theme.palette.tertiary.main} calc(100% - 8px), ${fade(theme.palette.common.white, 0)} 0, ${fade(theme.palette.common.white, 0)})`,
-    '&:before': {
-      content: '""',
-      position: 'absolute',
-      width: 'calc(100% - 2px)',
-      height: 8,
-      borderTop: `1px solid ${theme.palette.colors.border}`,
-      borderLeft: `1px solid ${theme.palette.colors.border}`,
-      top: -5,
-      left: -5
-    },
-    '&:after': {
-      content: '""',
-      position: 'absolute',
-      top: -8,
-      right: 0,
-      height: 20,
-      width: 1,
-      transform: 'rotate(-45deg)',
-      backgroundColor: theme.palette.colors.border
-    }
-  },
-  sectionTitleBorder: {
-    position: 'absolute',
-    width: 'calc(100% + 10px)',
-    height: 8,
-    borderTop: `1px solid ${theme.palette.colors.border}`,
-    borderLeft: `1px solid ${theme.palette.colors.border}`,
-    bottom: -12,
-    left: -5,
-    '&:after': {
-      content: '""',
-      position: 'absolute',
-      top: -2,
-      right: -3,
-      height: 8,
-      transform: 'rotate(-45deg)',
-      width: 1,
-      backgroundColor: theme.palette.colors.border
-    }
+  StepperWrapper:{
+    backgroundColor: 'transparent'
   }
 }))
+
+export const requestStepIconStyles = makeStyles({
+  root: {
+    backgroundColor: '#ccc',
+    zIndex: 1,
+    color: '#fff',
+    width: 50,
+    minWidth: 50,
+    height: 50,
+    display: 'flex',
+    borderRadius: '50%',
+    justifyContent: 'center',
+    padding: 0,
+    alignItems: 'center'
+  },
+  active: {
+    backgroundImage:
+      'linear-gradient( 136deg, rgba(210,144,44,1) 0%, rgba(181,19,24,1) 100%)',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)'
+  },
+  completed: {
+    backgroundImage:
+      'linear-gradient( 136deg, rgba(210,144,44,1) 0%, rgba(181,19,24,1) 100%)'
+  }
+})
+
+export const RequestStepsConnector = withStyles({
+  alternativeLabel: {
+    top: 22
+  },
+  active: {
+    '& $line:before': {
+      width: '100%'
+    }
+  },
+  completed: {
+    '& $line:before': {
+      width: '100%'
+    }
+  },
+  line: {
+    height: 4,
+    border: 0,
+    backgroundColor: '#eaeaf0',
+    borderRadius: 1,
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      width: 0,
+      left: 0,
+      top: 0,
+      display: 'block',
+      height: '100%',
+      zIndex: 0,
+      transition: 'all 0.3s ease-in-out',
+      backgroundImage: 'linear-gradient( 95deg,rgba(210,144,44,1) 0%, rgba(181,19,24,1) 100%)'
+    }
+  }
+})(StepConnector)

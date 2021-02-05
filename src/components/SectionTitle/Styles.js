@@ -15,7 +15,7 @@ export const useStyles = makeStyles((theme) => ({
     '&:before': {
       content: '""',
       position: 'absolute',
-      width: 'calc(100% - 2px)',
+      width: 'calc(100% - 4px)',
       height: 8,
       borderTop: `1px solid ${theme.palette.colors.border}`,
       borderLeft: `1px solid ${theme.palette.colors.border}`,
@@ -26,7 +26,7 @@ export const useStyles = makeStyles((theme) => ({
       content: '""',
       position: 'absolute',
       top: -8,
-      right: 0,
+      right: 2,
       height: 20,
       width: 1,
       transform: 'rotate(-45deg)',

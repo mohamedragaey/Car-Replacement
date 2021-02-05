@@ -59,6 +59,6 @@ export const useStyles = ((theme) => ({
   },
   content: {
     flex: '1 1 auto',
-    paddingTop: theme.spacing(15.625)
+    paddingTop: theme.spacing(14.625)
   }
 }))
