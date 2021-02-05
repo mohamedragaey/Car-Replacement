@@ -1,6 +1,11 @@
 import {fade, makeStyles} from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
+  mainNavigationWrapper: {
+    display: 'flex',
+    flex: '1 1 auto',
+    justifyContent: 'center'
+  },
   mainNavigation: {
     [theme.breakpoints.up('lg')]: {
       display: 'flex',
@@ -27,7 +32,9 @@ export const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         right: 0,
         '.inverse-Header &': {
-          display: 'none'
+          width: '100%',
+          height: '100%',
+          left: 'calc(100% - 43px)'
         }
       }
     },

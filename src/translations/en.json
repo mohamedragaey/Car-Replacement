@@ -55,5 +55,11 @@
   "InitiativeScope.item.para": "محافظات (القاهرة – الجيزة –الإسكندرية - القليوبية – بورسعيد – السويس – البحر الأحمر)",
   "intro.Banner.Caption.Title": "مبادرة إحلال المركبات المتقادمة للعمل بالغاز الطبيعي",
   "intro.Banner.Caption.Description": "مبادرة فخامة السيد رئيس الجمهورية\nلإحلال السيارات المتقادمة تاكسى – ميكروباص - ملاكى\nالتى مضىعلى صنعها عشرون عام بما فيها سنة الصنع\nبشرط أن تكون مستوفاة لنسب التصنيع المحلى وفقاً للقوانين\nوالقرارات الصادرة فى هذا الشأن",
-  "intro.Form.Link": "الإنضمام للمبادرة"
+  "intro.Form.Link": "الإنضمام للمبادرة",
+  "Fields.placeholder.requestNumber": "رقم الطلب",
+  "Fields.placeholder.nationalId": "الرقم القومي",
+  "IntroForm.help": "تحتاج مساعدة ؟",
+  "IntroForm.Submit": "استعلام",
+  "IntroForm.label": "أو اعرف حالة الطلب",
+  "ImplementationPartnersPageContent.Title": "شركاء النجاح"
 }
