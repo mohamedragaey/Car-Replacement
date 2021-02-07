@@ -34,14 +34,14 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
     initialValues: (!!Object.keys(requestData).length && !!requestData.step1 && !!Object.keys(requestData.step1).length) ? requestData.step1 : {
       ownerNationalId: '',
       ownerEmail: '',
-      ownerFakeMobile: '',//catch hack
-      ownerOTPMobile: '',
+      ownerFakeMobile: '20',//catch hack
+      ownerOTPMobile: '20',
       ownerOTPMobileVerificationCode1: '',
       ownerOTPMobileVerificationCode2: '',
       ownerOTPMobileVerificationCode3: '',
       ownerOTPMobileVerificationCode4: '',
       ownerMobile: '',
-      ownerSecondaryMobile: '',
+      ownerSecondaryMobile: '20',
       licenseNumberType: '1', //1 for letters&numbers, 2 for numbers only
       licenseNumberFirstLetter: '',
       licenseNumberSecondLetter: '',
