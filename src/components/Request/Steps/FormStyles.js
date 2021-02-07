@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { fade, makeStyles } from '@material-ui/core/styles'
 
 export const formStyles = makeStyles((theme) => ({
   formWrapper: {
@@ -41,7 +41,10 @@ export const formStyles = makeStyles((theme) => ({
       borderTopRightRadius: 0
     },
     '& .MuiFormControl-root': {
-      flex: '1 1 auto'
+      flex: '1 1 auto',
+      [theme.breakpoints.down('xs')]: {
+        width: '100%'
+      }
     },
     '& .MuiFormGroup-root[role="radiogroup"]': {
       flexDirection: 'row',
@@ -53,6 +56,28 @@ export const formStyles = makeStyles((theme) => ({
       display: 'block',
       width: '100%',
       textAlign: 'right'
+    }
+  },
+  FormInner: {
+    justifyContent: 'center',
+    '& $FormItem': {
+      [theme.breakpoints.up('md')]: {
+        width: '67%'
+      }
+    }
+  },
+
+  FormUpload: {
+    justifyContent: 'center',
+    '& $FormItem': {
+      [theme.breakpoints.up('md')]: {
+        width: '100%'
+      },
+      '& .MuiInputLabel-root': {
+        [theme.breakpoints.up('sm')]: {
+          minWidth: '36%'
+        }
+      }
     }
   },
   FormItemSelect: {
@@ -99,7 +124,8 @@ export const formStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(1.125),
       paddingRight: theme.spacing(5.625),
       '&[disabled]': {
-        backgroundColor: theme.palette.colors.body
+        cursor: 'pointer'
+        // backgroundColor: theme.palette.colors.body
       }
     },
     '& $PhoneInputButton': {
@@ -138,6 +164,7 @@ export const formStyles = makeStyles((theme) => ({
       minHeight: 40
     }
   },
+  RequestStepGoBack: {},
   FormSubmitRow: {
     width: '100%',
     display: 'flex',
@@ -150,8 +177,76 @@ export const formStyles = makeStyles((theme) => ({
     '& button': {
       fontWeight: theme.typography.fontWeightBold,
       marginLeft: theme.spacing(2),
+      '&:not($RequestStepGoBack)': {
+        color: theme.palette.common.white,
+        minWidth: '22.5%'
+      }
+    }
+  },
+  fileUploadWrapper: {
+    position: 'relative',
+    width: '100%',
+    height: 40,
+    boxShadow: `0px 0px 5px 2px ${fade(theme.palette.colors.border, 0.2)}`,
+    borderRadius: theme.spacing(0.75),
+
+    '&:after': {
+      content: 'attr(data-text)',
+      fontSize: theme.typography.pxToRem(14),
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      background: theme.palette.common.white,
+      padding: theme.spacing(1.25, 2),
+      display: 'block',
+      width: 'calc(100% - 40px)',
+      pointerEvents: 'none',
+      zIndex: 20,
+      height: 40,
+      lineHeight: theme.typography.pxToRem(18),
+      color: '#999',
+      borderRadius: theme.spacing(0.625, 1.25, 1.25, 0.625),
+      fontWeight: theme.typography.fontWeightRegular
+    },
+    '&:before': {
+      content: `${theme.direction === 'ltr' ? '\'Upload\'' : '\'إرفاق\''}`,
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      display: 'inline-block',
+      height: 40,
+      transition: 'all 0.3s ease-in-out',
+      background: theme.palette.primary.main,
       color: theme.palette.common.white,
-      minWidth: '22.5%'
+      fontWeight: theme.typography.fontWeightBold,
+      zIndex: 25,
+      fontSize: theme.typography.pxToRem(14),
+      lineHeight: theme.typography.pxToRem(38),
+      padding: theme.spacing(0, 3),
+      textTransform: 'uppercase',
+      pointerEvents: 'none',
+      borderRadius: theme.spacing(0, 0.625, 0.625, 0)
+    },
+
+    '&:hover': {
+      '&:before': {
+        background: theme.palette.primary.dark
+      }
+    },
+    '& input': {
+      opacity: 0,
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      zIndex: 99,
+      height: 40,
+      margin: 0,
+      padding: 0,
+      display: 'block',
+      cursor: 'pointer',
+      width: '100%'
     }
   }
 }))

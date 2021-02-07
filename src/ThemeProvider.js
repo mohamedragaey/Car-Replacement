@@ -46,7 +46,7 @@ const ThemeProvider = ({ children }) => {
         light: '#ffc05c',
         main: '#d2902c',
         dark: '#9c6300',
-        contrastText: '#000'
+        contrastText: '#fff'
       },
       tertiary: {
         light: '#ee5041',
@@ -86,6 +86,7 @@ const ThemeProvider = ({ children }) => {
       colors: {
         offWhite: '#F1F1F1',
         body: '#F5F5F5',
+        table: '#E8E8E8',
         footer: '#6d6d6d',
         border: '#74727f'
       }

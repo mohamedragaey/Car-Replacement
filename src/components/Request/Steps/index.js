@@ -81,9 +81,11 @@ const RequestSteps = () => {
               </Step>
             ))}
           </Stepper>
+          {!Mobile &&
           <Grid container>
             {getRequestStepContent(requestActiveStep)}
           </Grid>
+          }
         </>
       )}
     </RequestConsumer>

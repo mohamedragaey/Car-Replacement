@@ -31,7 +31,7 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
   const intl = useIntl()
   const [ownerSecondaryMobileError, setOwnerSecondaryMobileError] = React.useState('')
   const requestStep1Form = useFormik({
-    initialValues: {
+    initialValues: (!!Object.keys(requestData).length && !!requestData.step1 && !!Object.keys(requestData.step1).length) ? requestData.step1 : {
       ownerNationalId: '',
       ownerEmail: '',
       ownerFakeMobile: '',//catch hack
@@ -103,6 +103,10 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
   const handleOpenChangePhoneOTPModal = () => {
     setOpenChangePhoneOTPModal(true)
   }
+
+  const resetRequestStep1Form = () => {
+    requestStep1Form.resetForm()
+  }
   return (
     <RequestConsumer>
       {({ resetPhoneStatus }) => (
@@ -172,7 +176,7 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
                         enableSearch={false}
                         countryCodeEditable={false}
                         disableDropdown={true}
-                        jumpCursorToEnd={true}
+                        disabled={true}
                         onlyCountries={['eg']}
                         country={'eg'}
                         localization={ar}
@@ -180,7 +184,11 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
                         excludeCountries={['il']}
                         inputProps={{
                           name: 'ownerFakeMobile',
-                          required: false
+                          required: false,
+                          autoComplete: 'new-password',
+                          form: {
+                            autoComplete: 'off'
+                          }
                         }}
                         searchPlaceholder={intl.formatMessage({ id: 'PhoneInput.Search.placeholder' })}
                         searchNotFound={intl.formatMessage({ id: 'PhoneInput.Search.noResults' })}
@@ -468,10 +476,12 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
 
                 <ReCaptcha action='requestStep1Form'
                            handleVerification={(response) => { requestStep1Form.setFieldValue('reCaptcha', response) }}/>
-
+                {requestStep1Form.errors.reCaptcha && requestStep1Form.touched.reCaptcha && (
+                  <FormHelperText error={true}>{requestStep1Form.errors.reCaptcha}</FormHelperText>
+                )}
                 {!!viewTermsConditionsDialog &&
                 <TermsConditionsDialog
-                  handleAcceptTermsConditions={()=> onSubmit(requestStep1Form.values, requestStep1Form, handleTermsConditionsPopupDialog)}
+                  handleAcceptTermsConditions={() => onSubmit(requestStep1Form.values, requestStep1Form, handleTermsConditionsPopupDialog)}
                   openTermsConditionsDialog={openTermsConditionsDialog}
                 />
                 }
@@ -479,11 +489,11 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
                 <div className={formClasses.FormSubmitRow}>
                   <Button type={'submit'} variant={'contained'} size={'large'} color={'primary'}
                     // disabled={!requestStep1Form.isValid}
-                          className={classes.AdditionalInfoSubmit}>
+                  >
                     <FormattedMessage id='requestStep1Form.button.submit'/>
                   </Button>
                   <Button variant={'contained'} size={'large'} color={'secondary'}
-                          className={classes.AdditionalInfoSubmit}>
+                          onClick={resetRequestStep1Form}>
                     <FormattedMessage id='requestStep1Form.button.reset'/>
                   </Button>
                 </div>

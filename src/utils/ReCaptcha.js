@@ -7,13 +7,15 @@ const ReCaptcha = ({ handleVerification, action }) => {
   const [captchaResponse, setCaptchaResponse] = React.useState('')
   const onVerifyCaptcha = useCallback((response) => {
     setCaptchaResponse(response)
-  }, [])
+  }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [])
 
   React.useEffect(() => {
     if (!!captchaResponse) {
       handleVerification(captchaResponse)
     }
-  }, [captchaResponse])
+  }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [captchaResponse])
   return (
     <>
       <GoogleReCaptcha runOnlyOnMount={true} action={action} onVerify={onVerifyCaptcha}/>

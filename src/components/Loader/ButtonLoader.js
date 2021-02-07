@@ -8,7 +8,7 @@ export const ButtonLoader = ({ loading }) => {
     <div className={classes.buttonLoaderWrapper}>
       <MagicSpinner
         size={45}
-        color="#25007f"
+        color="#f44336"
         loading={loading}
       />
     </div>

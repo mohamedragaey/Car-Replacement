@@ -15,6 +15,27 @@ export const IntroFormValidation = yup.object().shape({
   nationalId: yup.string().required(<FormattedMessage id='validationSchema.required'/>)
 })
 
+export const requestStep3FormValidation = yup.object().shape({
+  newVehicleCompany: yup.string().required(<FormattedMessage id='validationSchema.required'/>),
+  newVehicleId: yup.string().required(<FormattedMessage id='validationSchema.required'/>)
+  // reCaptcha: yup.string().trim().required(<FormattedMessage id='validationSchema.reCaptcha'/>)
+})
+
+export const requestStep4FormValidation = yup.object().shape({
+  paymentMethod: yup.string().required(<FormattedMessage id='validationSchema.required'/>),
+  bankId: yup.string().when('paymentMethod', (val) => {
+    return (val === 'partial') ?
+      yup.string().trim().required(<FormattedMessage id='validationSchema.required'/>)
+      : yup.string().trim()
+  })
+  // reCaptcha: yup.string().trim().required(<FormattedMessage id='validationSchema.reCaptcha'/>)
+})
+
+export const requestStep5FormValidation = yup.object().shape({
+  nationalIdPic: yup.mixed().required(<FormattedMessage id='validationSchema.required'/>)
+  // reCaptcha: yup.string().trim().required(<FormattedMessage id='validationSchema.reCaptcha'/>)
+})
+
 export const requestStep1FormValidation = yup.object().shape({
   ownerNationalId: yup.string().trim().required(<FormattedMessage id='validationSchema.required'/>)
     .matches(/^[0-9]+$/, { message: <FormattedMessage id='validationSchema.socialNumberOnlyNumbers'/> })

@@ -44,7 +44,8 @@ export const filterData = (data) => {
     const isString = typeof data[key] === 'string' && data[key].length
     const isArray = Array.isArray(data[key]) && data[key].length
     const isNumber = Number.isInteger(data[key])
-    if (isString || isArray || isNumber) {
+    const isBoolean = typeof data[key] === 'boolean' && data[key] === !!data[key]
+    if (isString || isArray || isNumber || isBoolean) {
       newData[key] = data[key]
     }
   }))
@@ -74,4 +75,19 @@ export const randomKey = Math.random().toString(36).substr(2, 9)
 
 export const isEmpty = (object) => {
   return !Object.getOwnPropertySymbols(object).length && !Object.getOwnPropertyNames(object).length
+}
+
+
+export const parseLocaleNumber = (num) => {
+  // Detect the user's locale decimal separator:
+  let decimalSeparator = (1.1).toLocaleString().substring(1, 2)
+  // Detect the user's locale thousand separator:
+  let thousandSeparator = (1000).toLocaleString().substring(1, 2)
+  // In case there are locales that don't use a thousand separator
+  if (thousandSeparator.match(/\d/))
+    thousandSeparator = ''
+
+  num = num.replace(thousandSeparator, '').replace(decimalSeparator, '.')
+
+  return parseFloat(num)
 }

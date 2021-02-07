@@ -7,7 +7,7 @@ export const FormLoader = ({ props, loading }) => {
   return (
     <div className={classes.formLoaderWrapper}>
       <SwapSpinner
-        size={70}
+        size={50}
         color='#f44336'
         loading={loading}
       />

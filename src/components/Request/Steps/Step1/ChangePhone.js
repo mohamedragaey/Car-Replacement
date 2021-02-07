@@ -262,7 +262,11 @@ export default function ChangePhone ({ requestForm, resetPhoneStatus, open, setO
                           inputProps={{
                             name: 'ownerOTPMobile',
                             required: true,
-                            autoFocus: true
+                            autoFocus: true,
+                            autoComplete: 'new-password',
+                            form: {
+                              autoComplete: 'off'
+                            }
                           }}
                           searchPlaceholder={intl.formatMessage({ id: 'PhoneInput.Search.placeholder' })}
                           searchNotFound={intl.formatMessage({ id: 'PhoneInput.Search.noResults' })}
