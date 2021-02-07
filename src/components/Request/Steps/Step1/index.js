@@ -103,9 +103,11 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
   const handleOpenChangePhoneOTPModal = () => {
     setOpenChangePhoneOTPModal(true)
   }
-
+  const [shouldVerify, setShouldVerify] = React.useState(true)
   const resetRequestStep1Form = () => {
+    setShouldVerify(false)
     requestStep1Form.resetForm()
+    setTimeout(() => setShouldVerify(true), 100)
   }
   return (
     <RequestConsumer>
@@ -474,11 +476,15 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
                   </FormControl>
                 </div>
 
-                <ReCaptcha action='requestStep1Form'
-                           handleVerification={(response) => { requestStep1Form.setFieldValue('reCaptcha', response) }}/>
-                {requestStep1Form.errors.reCaptcha && requestStep1Form.touched.reCaptcha && (
-                  <FormHelperText error={true}>{requestStep1Form.errors.reCaptcha}</FormHelperText>
-                )}
+                {!!shouldVerify &&
+                <>
+                  <ReCaptcha action='requestStep1Form'
+                             handleVerification={(response) => { requestStep1Form.setFieldValue('reCaptcha', response) }}/>
+                  {requestStep1Form.errors.reCaptcha && requestStep1Form.touched.reCaptcha && (
+                    <FormHelperText error={true}>{requestStep1Form.errors.reCaptcha}</FormHelperText>
+                  )}
+                </>
+                }
                 {!!viewTermsConditionsDialog &&
                 <TermsConditionsDialog
                   handleAcceptTermsConditions={() => onSubmit(requestStep1Form.values, requestStep1Form, handleTermsConditionsPopupDialog)}
