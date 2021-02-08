@@ -10,11 +10,13 @@ import Company from './pages/Company'
 import ImplementationPartners from './pages/ImplementationPartners'
 import About from './pages/About'
 import Terms from './pages/Terms'
+import Laws from './pages/Laws'
 
 export const NamedRoutes = {
   home: '/',
   about: '/about',
   terms: '/terms',
+  laws: '/laws',
   requestRegistration: '/replacement-request',
   singleRequest: '/replacement-request/:id',
   positions: '/positions',
@@ -30,6 +32,7 @@ export const Routes = () => {
       <Route exact path={NamedRoutes.home} component={Home}/>
       <Route exact path={NamedRoutes.about} component={About}/>
       <Route exact path={NamedRoutes.terms} component={Terms}/>
+      <Route exact path={NamedRoutes.laws} component={Laws}/>
       <Route exact path={NamedRoutes.requestRegistration} component={RequestRegistration}/>
       <Route exact path={NamedRoutes.positions} component={Positions}/>
       <Route exact path={NamedRoutes.vacancies} component={Vacancies}/>

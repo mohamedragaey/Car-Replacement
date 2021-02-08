@@ -23,6 +23,12 @@
     "description": "terms",
     "schema": "/terms"
   },
+  "laws": {
+    "title": "laws page",
+    "image": "/public/logo.png",
+    "description": "laws",
+    "schema": "/laws"
+  },
   "positions": {
     "title": "Positions",
     "image": "/public/logo.png",
