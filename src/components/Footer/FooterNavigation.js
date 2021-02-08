@@ -25,7 +25,7 @@ let secondMenu = [
   {
     key: 4,
     label: <FormattedMessage id='MainNavigation.link.item4'/>,
-    link: NamedRoutes.implementationPartners
+    link: NamedRoutes.partners
   },
   {
     key: 5,

@@ -41,11 +41,11 @@
     "description": "Car Replacement",
     "schema": "/vacancies"
   },
-  "implementationPartners": {
-    "title": "Implementation Partners",
+  "partners": {
+    "title": "Partners",
     "image": "/public/logo.png",
     "description": "Car Replacement",
-    "schema": "/implementation-partners"
+    "schema": "/partners"
   },
   "exams": {
     "title": "Exams",

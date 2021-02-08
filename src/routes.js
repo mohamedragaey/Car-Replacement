@@ -7,7 +7,7 @@ import Positions from './pages/Positions'
 import Vacancies from './pages/Vacancies'
 import Exams from './pages/Exams'
 import Company from './pages/Company'
-import ImplementationPartners from './pages/ImplementationPartners'
+import Partners from './pages/Partners'
 import About from './pages/About'
 import Terms from './pages/Terms'
 import Laws from './pages/Laws'
@@ -21,7 +21,7 @@ export const NamedRoutes = {
   singleRequest: '/replacement-request/:id',
   positions: '/positions',
   vacancies: '/vacancies',
-  implementationPartners: '/implementation-partners',
+  partners: '/partners',
   exams: '/exams',
   company: '/company'
 }
@@ -36,7 +36,7 @@ export const Routes = () => {
       <Route exact path={NamedRoutes.requestRegistration} component={RequestRegistration}/>
       <Route exact path={NamedRoutes.positions} component={Positions}/>
       <Route exact path={NamedRoutes.vacancies} component={Vacancies}/>
-      <Route exact path={NamedRoutes.implementationPartners} component={ImplementationPartners}/>
+      <Route exact path={NamedRoutes.partners} component={Partners}/>
       <Route exact path={NamedRoutes.exams} component={Exams}/>
       <Route exact path={NamedRoutes.company} component={Company}/>
       <Route component={NoMatch}/>

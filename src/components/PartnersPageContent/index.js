@@ -81,7 +81,7 @@ const list = [
   }
 ]
 
-const ImplementationPartnersPageContent = () => {
+const PartnersPageContent = () => {
   const classes = useStyles()
   return (
     <Container maxWidth="lg" className={classes.fullHeight}>
@@ -90,7 +90,7 @@ const ImplementationPartnersPageContent = () => {
           <SectionTitle
             variant="h1"
             component="h1"
-            title={<FormattedMessage id='ImplementationPartnersPageContent.Title'/>}
+            title={<FormattedMessage id='PartnersPageContent.Title'/>}
           />
           <div className={classes.partnersWrapper}>
             <div className={classes.partnersWrapperInner}>
@@ -107,4 +107,4 @@ const ImplementationPartnersPageContent = () => {
   )
 }
 
-export default ImplementationPartnersPageContent
+export default PartnersPageContent

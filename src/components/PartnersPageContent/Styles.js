@@ -10,13 +10,16 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'wrap',
-    padding: theme.spacing(4, 0),
+    padding: theme.spacing(14, 0, 4),
     height: 'calc(100% - 100px)',
-    background: theme.palette.common.white
+    background: theme.palette.common.white,
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(3, 0)
+    }
   },
   partnersWrapperInner: {
     width: '100%',
-    maxWidth: 819,
+    maxWidth: 870,
     margin: 'auto',
     display: 'flex',
     alignItems: 'center',
@@ -27,10 +30,13 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: theme.spacing(2),
+    margin: theme.spacing(0, 3, 9.5),
+    [theme.breakpoints.down('xs')]: {
+      margin: theme.spacing(2)
+    },
     '& img': {
-      width: 123,
-      height: 123,
+      width: 126,
+      height: 126,
       objectFit: 'contain'
     }
   },
