@@ -84,9 +84,9 @@ const list = [
 const ImplementationPartnersPageContent = () => {
   const classes = useStyles()
   return (
-    <Container maxWidth="lg">
-      <Grid container justify='space-between' alignItems='flex-start' spacing={0}>
-        <Grid item xs={12} className={classes.partnersWrapperGrid}>
+    <Container maxWidth="lg" className={classes.fullHeight}>
+      <Grid container justify='space-between' alignItems='flex-start' spacing={0} className={classes.fullHeight}>
+        <Grid item xs={12} className={`${classes.partnersWrapperGrid} ${classes.fullHeight}`}>
           <SectionTitle
             variant="h1"
             component="h1"

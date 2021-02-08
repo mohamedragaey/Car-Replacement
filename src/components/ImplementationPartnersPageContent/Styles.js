@@ -1,14 +1,6 @@
 import {makeStyles} from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
-  partnersTitle: {
-    textAlign: 'center',
-    fontWeight: theme.typography.fontWeightRegular,
-    borderBottom: `1px solid ${theme.palette.tertiary.main}`,
-    paddingBottom: theme.spacing(2),
-    paddingTop: theme.spacing(2),
-    marginBottom: theme.spacing(0)
-  },
   partnersWrapperGrid: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(5)
@@ -19,6 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexWrap: 'wrap',
     padding: theme.spacing(4, 0),
+    height: 'calc(100% - 100px)',
     background: theme.palette.common.white
   },
   partnersWrapperInner: {
@@ -40,5 +33,8 @@ export const useStyles = makeStyles((theme) => ({
       height: 123,
       objectFit: 'contain'
     }
+  },
+  fullHeight: {
+    height: '100%'
   }
 }))
