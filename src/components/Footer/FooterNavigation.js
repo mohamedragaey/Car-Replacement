@@ -13,7 +13,7 @@ let menu = [
   {
     key: 2,
     label: <FormattedMessage id='MainNavigation.link.item2'/>,
-    link: NamedRoutes.positions
+    link: NamedRoutes.terms
   },
   {
     key: 3,

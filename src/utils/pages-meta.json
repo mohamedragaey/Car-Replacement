@@ -17,6 +17,12 @@
     "description": "About",
     "schema": "/about"
   },
+  "terms": {
+    "title": "terms page",
+    "image": "/public/logo.png",
+    "description": "terms",
+    "schema": "/terms"
+  },
   "positions": {
     "title": "Positions",
     "image": "/public/logo.png",
