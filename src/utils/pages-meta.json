@@ -11,6 +11,12 @@
     "description": "Replacement Registration",
     "schema": "/replacement-registration"
   },
+  "about": {
+    "title": "About page",
+    "image": "/public/logo.png",
+    "description": "About",
+    "schema": "/about"
+  },
   "positions": {
     "title": "Positions",
     "image": "/public/logo.png",

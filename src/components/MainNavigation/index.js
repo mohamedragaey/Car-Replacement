@@ -9,7 +9,7 @@ let menu = [
   {
     key: 1,
     label: <FormattedMessage id='MainNavigation.link.item1'/>,
-    link: NamedRoutes.home
+    link: NamedRoutes.about
   },
   {
     key: 2,
