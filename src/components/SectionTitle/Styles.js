@@ -9,7 +9,8 @@ export const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0.625, 5, 0.625, 1.25),
     color: theme.palette.common.white,
     position: 'relative',
-    minWidth: 250,
+    maxWidth: 250,
+    width: '100%',
     fontSize: theme.typography.pxToRem(16),
     background: `linear-gradient(-45deg, ${theme.palette.tertiary.main}, ${theme.palette.tertiary.main} calc(100% - 8px), ${fade(theme.palette.common.white, 0)} 0, ${fade(theme.palette.common.white, 0)})`,
     '&:before': {
