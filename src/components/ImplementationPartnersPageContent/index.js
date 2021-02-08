@@ -16,6 +16,7 @@ import petrol from './../../images/partners/petrol.webp'
 import police from './../../images/partners/police.webp'
 import trade_and_industry from './../../images/partners/trade_and_industry.webp'
 import transport from './../../images/partners/transport.webp'
+import SectionTitle from '../SectionTitle'
 
 const list = [
   {
@@ -85,14 +86,20 @@ const ImplementationPartnersPageContent = () => {
   return (
     <Container maxWidth="lg">
       <Grid container justify='space-between' alignItems='flex-start' spacing={0}>
-        <Grid item xs={12}>
-          <h1 className={classes.partnersTitle}><FormattedMessage id='ImplementationPartnersPageContent.Title'/></h1>
+        <Grid item xs={12} className={classes.partnersWrapperGrid}>
+          <SectionTitle
+            variant="h1"
+            component="h1"
+            title={<FormattedMessage id='ImplementationPartnersPageContent.Title'/>}
+          />
           <div className={classes.partnersWrapper}>
-            {list.map((item) => (
-              <div className={classes.partnersItem} key={item.id}>
-                <LazyImage src={item.src} alt={item.alt}/>
-              </div>
-            ))}
+            <div className={classes.partnersWrapperInner}>
+              {list.map((item) => (
+                <div className={classes.partnersItem} key={item.id}>
+                  <LazyImage src={item.src} alt={item.alt}/>
+                </div>
+              ))}
+            </div>
           </div>
         </Grid>
       </Grid>
