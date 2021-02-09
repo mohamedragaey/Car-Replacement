@@ -47,9 +47,8 @@ const NewsPageContent = () => {
           <div className={classes.newsWrapper}>
             <Grid container justify='center' alignItems='flex-start' spacing={0} className={classes.fullHeight}>
               {newsList.map((item) => (
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={4} key={item.id}>
                   <CardItem
-                    key={item.id}
                     id={item.id}
                     title={item.title}
                     date={item.date}
