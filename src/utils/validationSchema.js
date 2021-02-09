@@ -94,3 +94,11 @@ export const requestStep1FormValidation = yup.object().shape({
     .matches(/^[0-9]+$/, { message: <FormattedMessage id='validationSchema.vehicleEngineNumberOnlyNumbers'/> }),
   reCaptcha: yup.string().trim().required(<FormattedMessage id='validationSchema.reCaptcha'/>)
 })
+
+export const contactFormValidation = yup.object().shape({
+  name: yup.string().trim().required(<FormattedMessage id='validationSchema.required'/>),
+  email: yup.string().trim().email(<FormattedMessage id='validationSchema.validEmail'/>)
+    .required(<FormattedMessage id='validationSchema.required'/>),
+  message: yup.string().trim().required(<FormattedMessage id='validationSchema.required'/>),
+  reCaptcha: yup.string().trim().required(<FormattedMessage id='validationSchema.reCaptcha'/>)
+})

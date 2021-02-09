@@ -235,5 +235,12 @@
   "SecondLaw.list.second.sixItem": "رخصة سارية للسيارة القديمة المتهالكة المطلوب إحلالها وتجديدها.",
   "NewsPageContent.Title": "أخبار",
   "CardItem.Link.more": "المزيد",
-  "ContactUsPageContent.Title": "اتصل بنا"
+  "ContactUsPageContent.Title": "اتصل بنا",
+  "ContactForm.button.submit": "ارسال",
+  "Fields.label.name": "الإسم",
+  "Fields.label.email": "البريد الالكتروني",
+  "Fields.label.message": "الرسالة",
+  "ContactForm.title": "لإستفسار أو المساعدة برجاء ادخال البيانات الخاصة بك",
+  "ContactForm.FormSuccessAlert": "تم ارسال الرسالة بنجاح",
+  "ContactForm.FormErrorAlert": "برجاء اعادة المحاولة مرة اخري"
 }

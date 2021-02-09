@@ -3,6 +3,7 @@ import {FormattedMessage} from 'react-intl'
 import {Container, Grid} from '@material-ui/core'
 import SectionTitle from '../SectionTitle'
 import {useStyles} from './Styles'
+import ContactForm from './ContactForm'
 
 const ContactUsPageContent = () => {
   const classes = useStyles()
@@ -17,7 +18,7 @@ const ContactUsPageContent = () => {
             title={<FormattedMessage id='ContactUsPageContent.Title'/>}
           />
           <div className={classes.newsWrapper}>
-            Content
+            <ContactForm/>
           </div>
         </Grid>
       </Grid>

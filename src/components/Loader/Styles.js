@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 999,
+    zIndex: 1999,
     backgroundColor: fade(theme.palette.common.white, 0.5)
   },
   buttonLoaderWrapper: {
