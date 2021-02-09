@@ -29,18 +29,6 @@
     "description": "laws",
     "schema": "/laws"
   },
-  "positions": {
-    "title": "Positions",
-    "image": "/public/logo.png",
-    "description": "Car Replacement",
-    "schema": "/positions"
-  },
-  "vacancies": {
-    "title": "Vacancies",
-    "image": "/public/logo.png",
-    "description": "Car Replacement",
-    "schema": "/vacancies"
-  },
   "partners": {
     "title": "Partners",
     "image": "/public/logo.png",
@@ -59,16 +47,10 @@
     "description": "Car Replacement",
     "schema": "/news/:id"
   },
-  "exams": {
-    "title": "Exams",
+  "contactUs": {
+    "title": "Contact Us",
     "image": "/public/logo.png",
     "description": "Car Replacement",
-    "schema": "/exams"
-  },
-  "company": {
-    "title": "Company",
-    "image": "/public/logo.png",
-    "description": "Car Replacement",
-    "schema": "/company"
+    "schema": "/contact"
   }
 }
