@@ -47,6 +47,18 @@
     "description": "Car Replacement",
     "schema": "/partners"
   },
+  "news": {
+    "title": "News",
+    "image": "/public/logo.png",
+    "description": "Car Replacement",
+    "schema": "/news"
+  },
+  "singleNews": {
+    "title": "Single News",
+    "image": "/public/logo.png",
+    "description": "Car Replacement",
+    "schema": "/news/:id"
+  },
   "exams": {
     "title": "Exams",
     "image": "/public/logo.png",

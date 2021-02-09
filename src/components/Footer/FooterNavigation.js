@@ -30,7 +30,7 @@ let secondMenu = [
   {
     key: 5,
     label: <FormattedMessage id='MainNavigation.link.item5'/>,
-    link: NamedRoutes.exams
+    link: NamedRoutes.news
   },
   {
     key: 6,

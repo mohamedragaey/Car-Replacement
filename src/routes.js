@@ -11,12 +11,16 @@ import Partners from './pages/Partners'
 import About from './pages/About'
 import Terms from './pages/Terms'
 import Laws from './pages/Laws'
+import News from './pages/News'
+import SingleNews from './pages/SingleNews'
 
 export const NamedRoutes = {
   home: '/',
   about: '/about',
   terms: '/terms',
   laws: '/laws',
+  news: '/news',
+  singleNews: '/news/:id',
   requestRegistration: '/replacement-request',
   singleRequest: '/replacement-request/:id',
   positions: '/positions',
@@ -33,6 +37,8 @@ export const Routes = () => {
       <Route exact path={NamedRoutes.about} component={About}/>
       <Route exact path={NamedRoutes.terms} component={Terms}/>
       <Route exact path={NamedRoutes.laws} component={Laws}/>
+      <Route exact path={NamedRoutes.news} component={News}/>
+      <Route exact path={NamedRoutes.singleNews} component={SingleNews}/>
       <Route exact path={NamedRoutes.requestRegistration} component={RequestRegistration}/>
       <Route exact path={NamedRoutes.positions} component={Positions}/>
       <Route exact path={NamedRoutes.vacancies} component={Vacancies}/>
