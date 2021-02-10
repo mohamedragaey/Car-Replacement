@@ -5,6 +5,7 @@ import SecondLaw from './SecondLaw'
 import SectionTitle from '../SectionTitle'
 import FirstLaw from './FirstLaw'
 import {useStyles} from './Styles'
+import LawIntroText from './LawIntroText'
 
 function TabPanel (props) {
   const {children, value, index, ...other} = props
@@ -49,6 +50,7 @@ const LawsPageContent = () => {
             title={<FormattedMessage id='LawsPageContent.Title'/>}
           />
           <div className={classes.lawsWrapper}>
+            <LawIntroText/>
             <div className={classes.tabsWrapper}>
               <Tabs
                 orientation="vertical"

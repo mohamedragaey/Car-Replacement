@@ -9,8 +9,16 @@ export const useStyles = makeStyles((theme) => ({
   lawsWrapper: {
     height: 'calc(100% - 100px)',
     display: 'flex',
+    flexDirection: 'column',
     padding: theme.spacing(3, 4),
     background: theme.palette.common.white,
+    '& h2': {
+      marginTop: theme.spacing(0),
+      marginBottom: theme.spacing(0)
+    },
+    '& li': {
+      marginBottom: theme.spacing(1)
+    },
     [theme.breakpoints.down('sm')]: {
       padding: theme.spacing(3)
     },
