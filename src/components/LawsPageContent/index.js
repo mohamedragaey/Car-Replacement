@@ -1,11 +1,12 @@
 import React from 'react'
 import {FormattedMessage} from 'react-intl'
 import {Box, Container, Grid, Tab, Tabs} from '@material-ui/core'
-import SecondLaw from './SecondLaw'
+import SinglePagePDFViewer from './PDF/single-page'
 import SectionTitle from '../SectionTitle'
-import FirstLaw from './FirstLaw'
-import {useStyles} from './Styles'
 import LawIntroText from './LawIntroText'
+import {useStyles} from './Styles'
+import law121 from './law121.pdf'
+import law66 from './law66.pdf'
 
 function TabPanel (props) {
   const {children, value, index, ...other} = props
@@ -68,10 +69,10 @@ const LawsPageContent = () => {
                   {...a11yProps(1)} />
               </Tabs>
               <TabPanel value={value} index={0} className={classes.tabPanel}>
-                <FirstLaw/>
+                <SinglePagePDFViewer pdf={law66}/>
               </TabPanel>
               <TabPanel value={value} index={1} className={classes.tabPanel}>
-                <SecondLaw/>
+                <SinglePagePDFViewer pdf={law121}/>
               </TabPanel>
             </div>
           </div>
