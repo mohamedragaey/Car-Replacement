@@ -494,6 +494,7 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
 
                 <div className={formClasses.FormSubmitRow}>
                   <Button type={'submit'} variant={'contained'} size={'large'} color={'primary'}
+                          onClick={requestStep1Form.handleSubmit}
                     // disabled={!requestStep1Form.isValid}
                   >
                     <FormattedMessage id='requestStep1Form.button.submit'/>

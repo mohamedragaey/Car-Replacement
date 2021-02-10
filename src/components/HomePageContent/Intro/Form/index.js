@@ -84,7 +84,7 @@ const IntroForm = ({onSubmit, error, failure}) => {
                 className={classes.formAction}>
           <FormattedMessage id='IntroForm.Submit'/>
         </Button>
-        <NavLink className={classes.formActionHelp} to={NamedRoutes.company}>
+        <NavLink className={classes.formActionHelp} to={NamedRoutes.contact}>
           <FormattedMessage id='IntroForm.help'/>
         </NavLink>
         {formActions.isSubmitting && <FullBodyLoader loading={true}/>}
