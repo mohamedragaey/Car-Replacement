@@ -8,7 +8,7 @@ import {
   RadioGroup,
   FormHelperText, Select, MenuItem, Fade, Paper
 } from '@material-ui/core'
-import ReCaptcha from '../../../../utils/ReCaptcha'
+// import ReCaptcha from '../../../../utils/ReCaptcha'
 import { requestStep3FormValidation } from '../../../../utils/validationSchema'
 import { FormLoader } from '../../../Loader/FormLoader'
 import { formStyles } from '../FormStyles'
@@ -141,11 +141,11 @@ const RequestStep3 = ({ requestData, onSubmit, requestLoadAllVehiclesCompanies, 
                 {/*  <FormHelperText className={classes.newVehicleIdError}*/}
                 {/*                  error={true}>{requestStep3Form.errors.newVehicleId}</FormHelperText>*/}
                 {/*)}*/}
-                <ReCaptcha action='requestStep3Form'
-                           handleVerification={(response) => { requestStep3Form.setFieldValue('reCaptcha', response) }}/>
-                {requestStep3Form.errors.reCaptcha && requestStep3Form.touched.reCaptcha && (
-                  <FormHelperText error={true}>{requestStep3Form.errors.reCaptcha}</FormHelperText>
-                )}
+                {/*<ReCaptcha action='requestStep3Form'*/}
+                {/*           handleVerification={(response) => { requestStep3Form.setFieldValue('reCaptcha', response) }}/>*/}
+                {/*{requestStep3Form.errors.reCaptcha && requestStep3Form.touched.reCaptcha && (*/}
+                {/*  <FormHelperText error={true}>{requestStep3Form.errors.reCaptcha}</FormHelperText>*/}
+                {/*)}*/}
 
                 {!!viewVehicleSubmitDialog &&
                 <VehicleSubmitDialog

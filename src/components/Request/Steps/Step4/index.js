@@ -11,7 +11,7 @@ import {
   RadioGroup,
   FormHelperText, Select, MenuItem, Fade, Paper
 } from '@material-ui/core'
-import ReCaptcha from '../../../../utils/ReCaptcha'
+// import ReCaptcha from '../../../../utils/ReCaptcha'
 import { requestStep4FormValidation } from '../../../../utils/validationSchema'
 import { FormLoader } from '../../../Loader/FormLoader'
 import { formStyles } from '../FormStyles'
@@ -138,11 +138,11 @@ const RequestStep4 = ({ requestData, onSubmit, requestLoadAllBanks, requestLoadA
                     </div>
                     }
 
-                    <ReCaptcha action='requestStep4Form'
-                               handleVerification={(response) => { requestStep4Form.setFieldValue('reCaptcha', response) }}/>
-                    {requestStep4Form.errors.reCaptcha && requestStep4Form.touched.reCaptcha && (
-                      <FormHelperText error={true}>{requestStep4Form.errors.reCaptcha}</FormHelperText>
-                    )}
+                    {/*<ReCaptcha action='requestStep4Form'*/}
+                    {/*           handleVerification={(response) => { requestStep4Form.setFieldValue('reCaptcha', response) }}/>*/}
+                    {/*{requestStep4Form.errors.reCaptcha && requestStep4Form.touched.reCaptcha && (*/}
+                    {/*  <FormHelperText error={true}>{requestStep4Form.errors.reCaptcha}</FormHelperText>*/}
+                    {/*)}*/}
                     {!!requestStep4Form.isSubmitting && <FormLoader loading={true}/>}
 
                   </Grid>

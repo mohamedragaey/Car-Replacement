@@ -13,7 +13,7 @@ import {
   RadioGroup,
   FormHelperText, Select, MenuItem, Fade, Paper
 } from '@material-ui/core'
-import ReCaptcha from '../../../../utils/ReCaptcha'
+// import ReCaptcha from '../../../../utils/ReCaptcha'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/material.css'
 import ar from 'react-phone-input-2/lang/ar.json'
@@ -51,8 +51,8 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
       vehicleModel: '',
       vehicleManufactureYear: '',
       vehicleChassisNumber: '',
-      vehicleEngineNumber: '',
-      reCaptcha: ''
+      vehicleEngineNumber: ''
+      // reCaptcha: ''
     },
     validateOnBlur: false,
     validateOnChange: true,
@@ -476,15 +476,15 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
                   </FormControl>
                 </div>
 
-                {!!shouldVerify &&
-                <>
-                  <ReCaptcha action='requestStep1Form'
-                             handleVerification={(response) => { requestStep1Form.setFieldValue('reCaptcha', response) }}/>
-                  {requestStep1Form.errors.reCaptcha && requestStep1Form.touched.reCaptcha && (
-                    <FormHelperText error={true}>{requestStep1Form.errors.reCaptcha}</FormHelperText>
-                  )}
-                </>
-                }
+                {/*{!!shouldVerify &&*/}
+                {/*<>*/}
+                {/*  <ReCaptcha action='requestStep1Form'*/}
+                {/*             handleVerification={(response) => { requestStep1Form.setFieldValue('reCaptcha', response) }}/>*/}
+                {/*  {requestStep1Form.errors.reCaptcha && requestStep1Form.touched.reCaptcha && (*/}
+                {/*    <FormHelperText error={true}>{requestStep1Form.errors.reCaptcha}</FormHelperText>*/}
+                {/*  )}*/}
+                {/*</>*/}
+                {/*}*/}
                 {!!viewTermsConditionsDialog &&
                 <TermsConditionsDialog
                   handleAcceptTermsConditions={() => onSubmit(requestStep1Form.values, requestStep1Form, handleTermsConditionsPopupDialog)}
