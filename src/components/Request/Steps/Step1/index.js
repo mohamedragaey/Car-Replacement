@@ -103,11 +103,11 @@ const RequestStep1 = ({ requestData, onSubmit }) => {
   const handleOpenChangePhoneOTPModal = () => {
     setOpenChangePhoneOTPModal(true)
   }
-  const [shouldVerify, setShouldVerify] = React.useState(true)
+  // const [shouldVerify, setShouldVerify] = React.useState(true)
   const resetRequestStep1Form = () => {
-    setShouldVerify(false)
+    // setShouldVerify(false)
     requestStep1Form.resetForm()
-    setTimeout(() => setShouldVerify(true), 100)
+    // setTimeout(() => setShouldVerify(true), 100)
   }
   return (
     <RequestConsumer>
