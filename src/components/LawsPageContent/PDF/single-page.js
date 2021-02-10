@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Document, pdfjs, Page} from 'react-pdf'
 import {Button, TextField} from '@material-ui/core'
 import {useStyles} from './Styles'
+import {FormattedMessage} from 'react-intl'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
@@ -47,9 +48,6 @@ const SinglePagePDFViewer = (props) => {
         <p> Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}</p>
       </div>
       <div className={classes.buttonActionWrapper}>
-        <Button type="button" disabled={pageNumber <= 1} onClick={previousPage} variant='contained' color='primary'>
-          Previous
-        </Button>
         <Button
           color='primary'
           variant='contained'
@@ -57,7 +55,7 @@ const SinglePagePDFViewer = (props) => {
           disabled={pageNumber >= numPages}
           onClick={nextPage}
         >
-          Next
+          <FormattedMessage id='SinglePagePDFViewer.Button.Next'/>
         </Button>
         <TextField
           type='number'
@@ -67,6 +65,9 @@ const SinglePagePDFViewer = (props) => {
             inputProps: {min: 1, max: numPages}
           }}
         />
+        <Button type="button" disabled={pageNumber <= 1} onClick={previousPage} variant='contained' color='primary'>
+          <FormattedMessage id='SinglePagePDFViewer.Button.Previous'/>
+        </Button>
       </div>
     </div>
   )
